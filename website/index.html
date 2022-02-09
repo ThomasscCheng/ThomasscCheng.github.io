@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- the word desplayed on the tab -->
         <title>Welcome</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+        <style>
+            .logo:hover {
+            background-color: green;
+            color: blue;
+            text-decoration: line-through;
+            cursor: pointer;
+            }
+        </style>     
     </head>
     <body style = "background-color: black;">
-        <h1>Hello World</h1>
+        <span style = "background-color: white;"><h1 style = "color: gold; text-align: center;">Hello World</h1></span>
         <p>testing paragraphs</p>
-        <p>This is a link to another website with photo --> <a href = "index_2.html">GO TO PAGE 2</a></p>
-        <!-- test -->
+        <!-- animation when mouseover -->
+        <p>This is a link to another website with photo --> <a class = "logo" href = "index_2.html">GO TO PAGE 2</a></p>
     </body>
 </html>
