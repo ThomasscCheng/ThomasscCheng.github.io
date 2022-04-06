@@ -1,52 +1,23 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>
             WELCOME TO MY WEBSITE
         </title>
         <link rel = "stylesheet" types = "text/css" href = "style.css">
+        <script type="text/javascript" src="function.js"></script>
     </head>
 
     <body>
         <div class = "navigation_bar">
             <p id = "currentDate" style = "color: grey">
                 <script>
-                    function writeCurrentDate(){
-                        var currentDate = new Date();
-                        var day = currentDate.getDate();
-                        var month = currentDate.getMonth()+1;
-                        var year = currentDate.getFullYear();
-                        var currentTime = day + "-" + month + "-" + year;
-                        var location = document.getElementById("currentDate").innerHTML;
-                        document.getElementById("currentDate").innerHTML = currentTime;
-                        setTimeout(writeCurrentDate, 1000);
-                    }
-                    writeCurrentDate(); 
+                    callDate();
                 </script>
             </p>
             <p id = "currentTime" style = "color: grey" class = "time">
                 <script>
-                    function writeCurrentTime(){
-                        var currentDate = new Date();
-                        var second = currentDate.getSeconds();
-                        var minute = currentDate.getMinutes();
-                        var hour = currentDate.getHours();
-                        if (second < 10){
-                            second = "0" + second;
-                        }
-                        if (minute < 10){
-                            minute = "0" + minute;
-                        }
-                        if (hour < 10){
-                            hour = "0" + hour;
-                        }
-                        var currentTime = hour + ":" + minute + ":" + second;
-                        var location = document.getElementById("currentTime").innerHTML;
-                        document.getElementById("currentTime").innerHTML = currentTime;
-                        setTimeout(writeCurrentTime, 1000);
-                    }
-                    writeCurrentTime(); 
+                    callTime();
                 </script>
             </p>
             <a target = "iframe" href = "page_1.html">PAGE 1</a>
