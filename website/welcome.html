@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel = "stylesheet" types = "text/css" href = "style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>       
+    <meta charset = "UTF-8">
+  </head>
+
+  <body>
+    <div class = "loader-wrapper">
+      <span class="loader"><span class = "loader-inner"></span></span>
+  </div>
+
+  <script>
+      $(window).on("load", function(){
+          setTimeout(() => {
+              $(".loader-wrapper").animate({
+                opacity: "hide",
+                height: "hide"
+              }, "slow", "linear", function(){
+                $(this).remove();
+              });
+              // $(".loader-wrapper").fadeout();
+              // $(".loader-wrapper").hide({direction: "right"}, 1000);
+          }, 1000);
+      });
+  </script>
+  <h1 style = "text-align: center; font-family: Comic Sans MS" name = "title" class = "title">Welcome to my webpage</h1>
+</body>
+
+</html>

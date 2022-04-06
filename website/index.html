@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html>
+
     <head>
-        <!-- words to be desplayed on the tab -->
-        <title>Welcome</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
-        <style>
-            .logo:hover {
-            background-color: green;
-            color: blue;
-            /* put a line in the middle (-text-)*/
-            text-decoration: underline overline;
-            cursor: pointer;
-            }
-        </style>     
+        <title>
+            WELCOME TO MY WEBSITE
+        </title>
+        <link rel = "stylesheet" types = "text/css" href = "style.css">
     </head>
-    <body style = "background-color: black;">
-        <!-- <span style = "background-color: white; color: gold; text-align: center; font-size: large;">Hello World</span> -->
-        <h1 style = "background-color: white; color: gold; text-align: center;">Hello World</h1>
-        <p>testing paragraphs</p>
-        <!-- animation when mouseover -->
-        <p>This is a link to another website with photo --> <a class = "logo" href = "index_2.html">GO TO PAGE 2</a></p>
+
+    <body>
+        <div class = "navigation_bar">
+            <p id = "currentDate" style = "color: grey">
+                <script>
+                    function writeCurrentDate(){
+                        var currentDate = new Date();
+                        var day = currentDate.getDate();
+                        var month = currentDate.getMonth()+1;
+                        var year = currentDate.getFullYear();
+                        var currentTime = day + "-" + month + "-" + year;
+                        var location = document.getElementById("currentDate").innerHTML;
+                        document.getElementById("currentDate").innerHTML = currentTime;
+                        setTimeout(writeCurrentDate, 1000);
+                    }
+                    writeCurrentDate(); 
+                </script>
+            </p>
+            <p id = "currentTime" style = "color: grey" class = "time">
+                <script>
+                    function writeCurrentTime(){
+                        var currentDate = new Date();
+                        var second = currentDate.getSeconds();
+                        var minute = currentDate.getMinutes();
+                        var hour = currentDate.getHours();
+                        if (second < 10){
+                            second = "0" + second;
+                        }
+                        if (minute < 10){
+                            minute = "0" + minute;
+                        }
+                        if (hour < 10){
+                            hour = "0" + hour;
+                        }
+                        var currentTime = hour + ":" + minute + ":" + second;
+                        var location = document.getElementById("currentTime").innerHTML;
+                        document.getElementById("currentTime").innerHTML = currentTime;
+                        setTimeout(writeCurrentTime, 1000);
+                    }
+                    writeCurrentTime(); 
+                </script>
+            </p>
+            <a target = "iframe" href = "page_1.html">PAGE 1</a>
+            <a target = "iframe" href = "page_2.html">PAGE 2</a>
+        </div>
+        <iframe class = "iframe_main" name = "iframe" frameborder = "0" src = "welcome.html"></iframe>
     </body>
+
 </html>

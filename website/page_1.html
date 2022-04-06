@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <!-- <p> this is page 1</p> -->
+        <p type="text" id="currentDate" style = "text-align: right"></p>
+            
+            <script>
+                function writeCurrentTime(){
+                    var currentDate = new Date();
+                    var second = currentDate.getSeconds();
+                    var minute = currentDate.getMinutes();
+                    var hour = currentDate.getHours();
+                    if (second < 10){
+                        second = "0" + second;
+                    }
+                    if (minute < 10){
+                        minute = "0" + minute;
+                    }
+                    if (hour < 10){
+                        hour = "0" + hour;
+                    }
+                    var currentTime = hour + ":" + minute + ":" + second;
+                    var location = document.getElementById("currentDate").innerHTML;
+                    document.getElementById("currentDate").innerHTML = currentTime;
+                    setTimeout(writeCurrentTime, 1000);
+                }
+                writeCurrentTime(); 
+            </script>
+            
+    </body>
+</html>
