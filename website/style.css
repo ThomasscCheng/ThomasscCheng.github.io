@@ -29,9 +29,41 @@
     /* float: left; */
 }
 
+.enlarge{
+  animation: large 0.25s infinite ease;
+}
+
+@keyframes large{
+  0% {
+    color: gold;
+    font-size: large;
+  }
+  
+  25% {
+    color: brown;
+    font-size: x-large;
+  }
+  
+  50% {
+    color: peru;
+    font-size: xx-large;
+  }
+  
+  75% {
+    color: green;
+    font-size: x-large;
+  }
+  
+  100% {
+    color: orange;
+    font-size: large
+  }
+}
+
+
 .title{
   margin-top: 100;
-  animation: change 1s infinite ease;
+  animation: change 0.25s infinite ease;
   color: blue;
   font-size: xx-large;
 }

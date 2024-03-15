@@ -9,27 +9,35 @@
     </head>
 
     <body>
-        <!-- <div class = "navigation_bar">
-            <p id = "currentDate" style = "color: grey">
-                <script>
-                    callDate();
-                </script>
-            </p>
-            <p id = "currentTime" style = "color: grey" class = "time">
-                <script>
-                    callTime();
-                </script>
-            </p>
-            <a target = "iframe" href = "page_1.html">PAGE 1</a>
-            <a target = "iframe" href = "page_2.html">PAGE 2</a>
-        </div> -->
-        <div style="height: 100px;"></div>
-        <div style="height: 1000px;">
-            <h1 style = "text-align: center; font-family: Comic Sans MS" name = "title" class = "title">HAPPY 1ST ANNIVERSARY BB</h1>
-            <div style="width: 100%; overflow: hidden;  text-align: center;">
-                <div style="width: 600px; float: left; color: aqua; height: 300px; line-height: 300px; font-size: large; background-color: aqua; "> <a href="video.html">#1</a> </div>
-                <div style="margin-left: 500px; height: 300px; line-height: 300px; font-size: large; background-color: red;"> <a href="map.html">#2</a> </div>
-           </div>
+        <script>
+
+            showTip = false;
+
+            function submit(){
+                const  i = document.getElementById("input").value.toString();
+                document.getElementById("tip").innerText = "";
+                if (i.includes("機械暴龍獸")){
+                    window.location = "inner.html";
+                } else if (i.toLowerCase().includes("thomas")){
+                    document.getElementById("err").innerText = "NOOOO 我有個霸氣啲名㗎 🙂";
+                    document.getElementById("tip").innerText = "TIPS: ROARRRRRRRRR";
+                } else if (i.toLowerCase().includes("clarice")){
+                    document.getElementById("err").innerText = "NOOOO I am asking you not me"
+                } else if (i.toLowerCase().replace(" ","").includes("chunchun") || i.toLowerCase().replace(" ","").includes("nipnip") || i.toLowerCase().replace(" ","").includes("pleple")){
+                    document.getElementById("err").innerText = "YEEEEEE not this ah"
+                } else {
+                    document.getElementById("err").innerText = "NOOOOOOO"
+                }
+            }
+        </script>
+        <div style="text-align: center;">
+            <h1>Authentication</h1>
+            <h2>Answer the following question</h2>
+            <h2>Who is my FAVOURITE person?</h2>
+            <h3 style="color: red;" id="err"></h3>
+            <h3 style="color: red;" id="tip"></h3>
+            <input type="text" id="input">
+            <button onclick="submit()">Submit</button>
         </div>
 
     </body>
