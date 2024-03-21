@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            WELCOME TO MY WEBSITE
+        </title>
+        <link rel = "stylesheet" types = "text/css" href = "style.css">
+        <script type="text/javascript" src="function.js"></script>
+    </head>
+
+    <body>
+        <script>
+
+            showTip = false;
+
+            function submit(){
+                const  i = document.getElementById("input").value.toString();
+                document.getElementById("tip").innerText = "";
+                if (i.toLowerCase() === "bb"){
+                    window.location = "inner.html";
+                } else if (i.toLowerCase().includes("thomas")){
+                    document.getElementById("err").innerText = "NOOOO You can not call me that";
+                } else if (i.toLowerCase().includes("clarice")){
+                    document.getElementById("err").innerText = "NOOOO I am asking you not me"
+                } else if (i.toLowerCase().replace(" ","").includes("chunchun") || i.toLowerCase().replace(" ","").includes("nipnip") || i.toLowerCase().replace(" ","").includes("pleple")){
+                    document.getElementById("err").innerText = "YEEEEEE not this ah"
+                } else {
+                    document.getElementById("err").innerText = "NOOOOOOO"
+                }
+            }
+        </script>
+        <div style="text-align: center;">
+            <h1>Authentication</h1>
+            <h2>Answer the following question</h2>
+            <h2>Who is my FAVOURITE person?</h2>
+            <h3 style="color: red;" id="err"></h3>
+            <h3 style="color: red;" id="tip"></h3>
+            <input type="text" id="input">
+            <button onclick="submit()">Submit</button>
+        </div>
+
+    </body>
+
+</html>

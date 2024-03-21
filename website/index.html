@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            WELCOME TO MY WEBSITE
-        </title>
-        <link rel = "stylesheet" types = "text/css" href = "style.css">
-        <script type="text/javascript" src="function.js"></script>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            
+        })();
+    </script>
+    <script type="text/javascript">
+        function sendEmail(){
+            const serviceId = "gmail";
+            const templateId = "template_95w0qu5";
+            emailjs.init({
+              publicKey: "6im6ZmbNP_y4McmlS",
+            });
+            emailjs.send(serviceId, templateId).then(() => {
+                        console.log('SUCCESS!');
+                        document.getElementById("msg").innerText = "Go check your email 😊";
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                        document.getElementById("msg").innerText = "Something went wrong, you use phone la haha";
+                    });
+        }
 
-    <body>
-        <script>
+        function phone(){
+            window.location = "inner.html";
+        }
+    </script>
+</head>
+<body style="max-width: max-content; margin: auto;">
 
-            showTip = false;
 
-            function submit(){
-                const  i = document.getElementById("input").value.toString();
-                document.getElementById("tip").innerText = "";
-                if (i.includes("機械暴龍獸")){
-                    window.location = "inner.html";
-                } else if (i.toLowerCase().includes("thomas")){
-                    document.getElementById("err").innerText = "NOOOO 我有個霸氣啲名㗎 🙂";
-                    document.getElementById("tip").innerText = "TIPS: ROARRRRRRRRR";
-                } else if (i.toLowerCase().includes("clarice")){
-                    document.getElementById("err").innerText = "NOOOO I am asking you not me"
-                } else if (i.toLowerCase().replace(" ","").includes("chunchun") || i.toLowerCase().replace(" ","").includes("nipnip") || i.toLowerCase().replace(" ","").includes("pleple")){
-                    document.getElementById("err").innerText = "YEEEEEE not this ah"
-                } else {
-                    document.getElementById("err").innerText = "NOOOOOOO"
-                }
-            }
-        </script>
-        <div style="text-align: center;">
-            <h1>Authentication</h1>
-            <h2>Answer the following question</h2>
-            <h2>Who is my FAVOURITE person?</h2>
-            <h3 style="color: red;" id="err"></h3>
-            <h3 style="color: red;" id="tip"></h3>
-            <input type="text" id="input">
-            <button onclick="submit()">Submit</button>
-        </div>
+    <div style="max-width: max-content; margin: auto;">    <h1 style="margin-top: 100px;">Send the link to your email to open on computer</h1> </div>
 
-    </body>
-
+    <div style="max-width: max-content; margin: auto;"><button style="margin: auto; " onclick="sendEmail()">Send to email</button> </div>
+    <div style="max-width: max-content; margin: auto;"><h2 style="margin: auto; margin-top: 20px; color: blue;" id="msg"></h2> </div>
+    <div style="max-width: max-content; margin: auto;">    <h1 style="margin: auto; margin-bottom: 10px; margin-top: 50px;">Continue on phone</h1></div>
+    <div style="max-width: max-content; margin: auto;"><button style="margin: auto;" onclick="phone()">Continue</button> </div>
+</body>
 </html>

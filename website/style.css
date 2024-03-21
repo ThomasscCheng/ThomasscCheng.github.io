@@ -60,6 +60,33 @@
   }
 }
 
+.background{
+  margin-top: 100;
+  animation: bg 0.25s infinite ease;
+  color: blue;
+  font-size: xx-large;
+}
+@keyframes bg{
+  0% {
+    background-color: gold;
+  }
+  
+  25% {
+    background-color: brown;
+  }
+  
+  50% {
+    background-color: peru;
+  }
+  
+  75% {
+    background-color: green;
+  }
+  
+  100% {
+    background-color: orange;
+  }
+}
 
 .title{
   margin-top: 100;
